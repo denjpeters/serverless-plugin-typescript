@@ -3,6 +3,9 @@ const express = require('express');
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.get('/', (req, res) => {
+    res.send({ application: 'sample-app', version: '1.00' });
+});
 app.get('/api/info', (req, res) => {
     res.send({ application: 'sample-app', version: '1.01' });
 });

@@ -1,4 +1,4 @@
-service: serverless-example
+service: serverless-example-express
 
 plugins:
   - serverless-plugin-typescript
@@ -6,10 +6,13 @@ plugins:
 provider:
   name: aws
   runtime: nodejs12.x
+  stage: dev
+  region: us-east-1
+  memorySize: 128
 
 functions:
-  hello:
-    handler: example/handler.handler
+  app:
+    handler: handler.handler
     events:
       - http:
           path: /
