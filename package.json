@@ -14,7 +14,7 @@
     "build": "rimraf dist && tsc",
     "pretest": "npm run lint",
     "test": "jest",
-    "lint": "tslint -c tslint.json 'src/**/*.ts'"
+    "lint": "tslint -c tslintz.json 'src/**/*.ts'"
   },
   "repository": {
     "type": "git",
