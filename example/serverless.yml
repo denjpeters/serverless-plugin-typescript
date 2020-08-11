@@ -9,8 +9,13 @@ provider:
 
 functions:
   hello:
-    handler: handler.hello
+    handler: example/handler.handler
     events:
       - http:
-          path: hello
-          method: get
+          path: /
+          method: ANY
+          cors: true
+      - http:
+          path: /{proxy+}
+          method: ANY
+          cors: true

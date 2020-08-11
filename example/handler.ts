@@ -1,21 +1,13 @@
-// import * as _ from 'lodash'
-
-// modern module syntax
-export async function hello(event, context, callback) {
-    
-    // dependencies work as expected
-    // console.log(_.VERSION)
-    
-    // async/await also works out of the box
-    await new Promise((resolve, reject) => setTimeout(resolve, 500))
-    
-    const response = {
-        statusCode: 200,
-        body: JSON.stringify({
-            message: 'Go Serverless v1.0! Your function executed successfully!',
-            input: event
-        })
-    }
-    
-    callback(null, response)
-}
+const serverless = require('serverless-http');
+const express = require('express');
+const app = express();
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.get('/api/info', (req, res) => {
+    res.send({ application: 'sample-app', version: '1.01' });
+});
+app.post('/api/v1/getback', (req, res) => {
+    res.send({ ...req.body });
+});
+//app.listen(3000, () => console.log(`Listening on: 3000`));
+module.exports.handler = serverless(app);
