@@ -2,6 +2,7 @@ service: serverless-example-express
 
 plugins:
   - serverless-plugin-typescript
+  - serverless-domain-manager
 
 provider:
   name: aws
@@ -22,3 +23,11 @@ functions:
           path: /{proxy+}
           method: ANY
           cors: true
+
+custom:
+  customDomain:
+    domainName: testlambda.intelliwake.com
+    basePath: ''
+    stage: dev
+    certificateArn: 'arn:aws:acm:us-east-1:074758340900:certificate/a7c3c67d-b72d-4b5e-914a-a014b7a0cf87'
+    createRoute53Record: true
