@@ -40,5 +40,3 @@ custom:
     httpPort: 4000
     noPrependStageInUrl: true
     useChildProcesses: true
-    stageVariables:
-        STAGE: local

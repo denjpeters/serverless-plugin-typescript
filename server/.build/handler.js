@@ -8,7 +8,7 @@ app.get('/', function (req, res) {
     res.send({ application: 'sample-app', version: '1.00', stage: stage });
 });
 app.get('/api/info', function (req, res) {
-    res.send({ application: 'sample-app', version: '1.010', stage: process.env.STAGE, isOffline: process.env.IS_OFFLINE });
+    res.send({ application: 'sample-app', version: '1.011', stage: process.env.STAGE, isOffline: !!process.env.IS_OFFLINE ? 1 : 0 });
 });
 app.post('/api/v1/getback', function (req, res) {
     res.send({ application: 'sample-app', version: '1.02' });
