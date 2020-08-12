@@ -15,7 +15,7 @@ app.post('/api/v1/getback', (req, res) => {
     res.send({ application: 'sample-app', version: '1.02' });
     // res.send({ ...req.body });
 });
-app.get('/', (req, res) => {
+app.get('*', (req, res) => {
     const stage = !!process.env.STAGE ? process.env.STAGE : 'local'
     
     res.send({ application: 'sample-app', version: '0.00', stage: stage });
