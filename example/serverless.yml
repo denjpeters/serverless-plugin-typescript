@@ -3,6 +3,7 @@ service: serverless-example-express
 plugins:
   - serverless-plugin-typescript
   - serverless-domain-manager
+  - serverless-offline
 
 provider:
   name: aws
@@ -34,3 +35,9 @@ custom:
     stage: ${opt:stage, 'dev'}
     certificateArn: 'arn:aws:acm:us-east-1:074758340900:certificate/a7c3c67d-b72d-4b5e-914a-a014b7a0cf87'
     createRoute53Record: true
+  serverless-offline:
+    httpsProtocol: 'dev-certs'
+    httpPort: 4000
+    useChildProcesses: true
+    stageVariables:
+        STAGE: local
