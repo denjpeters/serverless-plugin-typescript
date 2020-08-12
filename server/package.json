@@ -2,7 +2,9 @@
   "main": "handler.js",
   "dependencies": {
     "express": "^4.17.1",
-    "serverless-http": "^2.5.0"
+    "serverless-http": "^2.5.0",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.7"
   },
   "devDependencies": {
     "@types/node": "^11.13.0",

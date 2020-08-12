@@ -80,7 +80,7 @@ export class TypeScriptPlugin {
     const { service } = this.serverless
 
     if (options.function) {
-      return {
+			return {
         [options.function]: service.functions[this.options.function]
       }
     }

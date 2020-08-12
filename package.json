@@ -28,17 +28,15 @@
   ],
   "devDependencies": {
     "@types/fs-extra": "5.0.5",
-    "@types/jest": "24.0.12",
     "@types/lodash": "4.14.123",
     "@types/node": "12.6.2",
-    "jest": "24.5.0",
     "mock-fs": "4.9.0",
+    "prettier": "^2.0.5",
     "rimraf": "2.6.3",
+    "serverless": "^1.78.1",
     "serverless-domain-manager": "^4.2.0",
     "serverless-offline": "^6.5.0",
-    "ts-jest": "24.0.2",
-    "tslint": "5.14.0",
-    "typescript": "^3.4.1"
+    "typescript": "^3.9.7"
   },
   "dependencies": {
     "fs-extra": "^7.0.1",
@@ -47,14 +45,5 @@
   },
   "peerDependencies": {
     "typescript": ">=2.2.2"
-  },
-  "jest": {
-    "preset": "ts-jest",
-    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.ts$",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js"
-    ]
   }
 }
