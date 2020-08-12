@@ -6,7 +6,7 @@ app.use(express.json());
 app.get('/', (req: any, res: any) => {
     const stage = process.env.STAGE ?? '123'
     
-    res.send({ application: 'sample-app', version: '1.00', stage: stage });
+    res.send({ application: 'sample-app', version: '2.00', stage: stage });
 });
 app.get('/api/info', (req: any, res: any) => {
     res.send({ application: 'sample-app', version: '1.011', stage: process.env.STAGE, isOffline: !!process.env.IS_OFFLINE ? 1 : 0 });

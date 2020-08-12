@@ -28,7 +28,7 @@ plugins:
 
 ## Configure
 
-See [example folder](server) for a minimal example.
+See [example folder](api) for a minimal example.
 
 ### `tsconfig.json`
 
