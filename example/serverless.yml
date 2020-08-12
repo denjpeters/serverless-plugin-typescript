@@ -7,9 +7,12 @@ plugins:
 provider:
   name: aws
   runtime: nodejs12.x
-  stage: dev
+  stage: ${opt:stage, 'dev'}
   region: us-east-1
   memorySize: 128
+  endpointType: regional
+  environment:
+    STAGE: ${opt:stage, 'dev'}
 
 functions:
   app:
@@ -26,8 +29,8 @@ functions:
 
 custom:
   customDomain:
-    domainName: testlambda.intelliwake.com
+    domainName: ${opt:stage, 'dev'}lambda.intelliwake.com
     basePath: ''
-    stage: dev
+    stage: ${opt:stage, 'dev'}
     certificateArn: 'arn:aws:acm:us-east-1:074758340900:certificate/a7c3c67d-b72d-4b5e-914a-a014b7a0cf87'
     createRoute53Record: true
