@@ -12,9 +12,7 @@
     "prepublish": "npm run build",
     "precommit": "npm run test",
     "build": "rimraf dist && tsc",
-    "pretest": "npm run lint",
-    "test": "jest",
-    "lint": "tslint -c tslintz.json 'src/**/*.ts'"
+    "deploy:dev": "cd app && yarn run build && cd ../api && sls deploy --stage dev"
   },
   "repository": {
     "type": "git",
