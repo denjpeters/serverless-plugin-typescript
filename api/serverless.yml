@@ -31,7 +31,7 @@ functions:
 custom:
   customDomain:
     domainName: ${opt:stage, 'dev'}lambda.intelliwake.com
-    basePath: ''
+    basePath: 'api'
     stage: ${opt:stage, 'dev'}
     certificateArn: 'arn:aws:acm:us-east-1:074758340900:certificate/a7c3c67d-b72d-4b5e-914a-a014b7a0cf87'
     createRoute53Record: true
@@ -39,4 +39,5 @@ custom:
     httpsProtocol: 'dev-certs'
     httpPort: 4000
     noPrependStageInUrl: true
+    prefix: 'api'
     useChildProcesses: true
