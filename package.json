@@ -2,17 +2,21 @@
   "name": "serverless-plugin-typescript",
   "version": "0.0.0-semantic-release",
   "license": "MIT",
-  "main": "dist/src/index.js",
-  "files": [
-    "dist",
-    "package.json",
-    "README.md"
+  "main": "build/server/index.js",
+  "workspaces": [
+    "app",
+    "server"
   ],
   "scripts": {
     "prepublish": "npm run build",
     "precommit": "npm run test",
     "build": "rimraf dist && tsc",
-    "deploy:dev": "cd app && yarn run build && cd ../api && sls deploy --stage dev"
+    "offline": "cd server && sls offline",
+    "deploy:dev": "cd app && yarn run build && cd ../api && sls deploy --stage dev",
+    "server": "yarn workspace server dev",
+    "servernomon": "yarn workspace server start",
+    "app": "yarn workspace app start",
+    "start": "concurrently --kill-others-on-fail \"yarn server\"  \"yarn app\""
   },
   "repository": {
     "type": "git",
@@ -25,21 +29,10 @@
     "aws lambda"
   ],
   "devDependencies": {
-    "@types/fs-extra": "5.0.5",
-    "@types/lodash": "4.14.123",
-    "@types/node": "12.6.2",
-    "mock-fs": "4.9.0",
-    "prettier": "^2.0.5",
-    "rimraf": "2.6.3",
-    "serverless": "^1.78.1",
-    "serverless-domain-manager": "^4.2.0",
-    "serverless-offline": "^6.5.0",
-    "typescript": "^3.9.7"
+
   },
   "dependencies": {
-    "fs-extra": "^7.0.1",
-    "globby": "^9.2.0",
-    "lodash": "^4.17.11"
+
   },
   "peerDependencies": {
     "typescript": ">=2.2.2"

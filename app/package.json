@@ -1,5 +1,5 @@
 {
-  "name": "serverless-react-typescript",
+  "name": "app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -16,10 +16,11 @@
     "typescript": "~3.7.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "startz": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "start": "PORT=3011 HTTPS=true react-scripts start"
   },
   "eslintConfig": {
     "extends": "react-app"

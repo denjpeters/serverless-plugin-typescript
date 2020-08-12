@@ -1,12 +1,9 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "declaration": true,
+    "declarationMap": true,
     "rootDir": ".",
-    "target": "es6",
-    "sourceMap": true,
-    "outDir": "dist"
-  },
-  "exclude": [
-    "node_modules"
-  ]
+    "outDir": "build",
+    "allowSyntheticDefaultImports": true
+  }
 }

@@ -1,5 +1,6 @@
 const serverless = require('serverless-http')
 const express = require('express')
+const path = require('path')
 const app = express()
 app.use(express.urlencoded({extended: true}))
 app.use(express.json())
@@ -21,7 +22,7 @@ app.post('/api/v1/getback', (req: any, res: any) => {
     // res.send({ ...req.body });
 })
 app.get('*', (req: any, res: any) => {
-    res.send({notFound: true, url: req.url, baseUrl: req.baseUrl, originalUrl: req.originalUrl, _parsedUrl: req._parsedUrl})
+    res.sendFile(path.resolve('./') + '/build/app/index.html')
 })
 //app.listen(3000, () => console.log(`Listening on: 3000`));
 module.exports.handler = serverless(app)
